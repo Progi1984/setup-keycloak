@@ -11,9 +11,7 @@ describe('Keycloak', function () {
 
     afterEach(async function() {})
     
-    it('should return a HTTP code equals to 200', async() => {
-
-        console.log(process.env);
+    it('should return a HTTP code equals to 200', async function () {
         const response = await request.get(`http://localhost:8080/`);
         expect(response.status()).to.eq(200);
     });
