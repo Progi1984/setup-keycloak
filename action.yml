@@ -9,6 +9,12 @@ inputs:
   keycloak_http_port:
     description: 'Setup Keycloak HTTP Port'
     default: '8080'
+  keycloak_admin_user:
+    description: 'Setup Keycloak Admin User'
+    default: 'admin'
+  keycloak_admin_pass:
+    description: 'Setup Keycloak Admin Pass'
+    default: 'admin'
 runs:
   using: 'docker'
   image: 'Dockerfile'
