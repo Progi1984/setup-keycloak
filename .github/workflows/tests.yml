@@ -7,13 +7,24 @@ on:
   pull_request:
 
 jobs:
-  basic-test:
+  test001:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Basic Test
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Setup Keycloak
         uses: ./
         with:
           keycloak-version: latest
-      - name: Test the output
+      - name: KeyCloak is up
         run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:8080/)" != "200" ]]; do sleep 5; done'
+      - name: Tests (Install dependencies)
+        working-directory: tests
+        run: npm i
+      - name: Tests (Execute command)
+        working-directory: tests
+        run: npm run test001
