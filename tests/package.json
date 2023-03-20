@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "GitHub action to set up KeyCloak",
   "scripts": {
-    "test001": "mocha test001.js"
+    "test001": "mocha test001.js",
+    "test002": "mocha test002.js"
   },
   "author": "",
   "license": "MIT",
