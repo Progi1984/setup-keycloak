@@ -28,8 +28,8 @@ describe('Keycloak', function () {
     
     it('should login', async function () {
         await page.waitForSelector('.login-pf-header');
-        await page.locator('#username').fill('my_admin');
-        await page.locator('#password').fill('my_pass');
+        await page.locator('#username').fill('admin');
+        await page.locator('#password').fill('admin');
         await page.click('#kc-login');
     });
     
@@ -39,5 +39,8 @@ describe('Keycloak', function () {
         await page.waitForSelector(selVersion, {
             timeout: 30000
         });
+
+        const data = await page.locator(selVersion).innerHTML();
+        expect(data).to.eq('19.0.3');
     });
 });

@@ -5,7 +5,8 @@
   "scripts": {
     "test001": "mocha UI/test001.js",
     "test002": "mocha UI/test002.js",
-    "test003": "mocha UI/test003.js"
+    "test003": "mocha UI/test003.js",
+    "test004": "mocha UI/test004.js"
   },
   "author": "",
   "license": "MIT",
