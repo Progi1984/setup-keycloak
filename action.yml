@@ -2,10 +2,13 @@ name: 'Setup Keycloak Action'
 author: progi1984
 description: 'GitHub Action for Keycloak'
 inputs:
-  keycloak-version:
-    description: 'Setup Keycloak version'
+  keycloak_version:
+    description: 'Setup Keycloak Version'
     default: 'latest'
     required: true
+  keycloak_http_port:
+    description: 'Setup Keycloak HTTP Port'
+    default: '8080'
 runs:
   using: 'docker'
   image: 'Dockerfile'
