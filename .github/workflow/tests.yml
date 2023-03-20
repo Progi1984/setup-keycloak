@@ -1,0 +1,19 @@
+name: Keycloak Run Action Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  basic-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Basic Test
+        uses: ./
+        with:
+          keycloak-version: latest
+      - name: Test the output
+        run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:8080/)" != "200" ]]; do sleep 5; done'

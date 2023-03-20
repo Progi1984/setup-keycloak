@@ -1,0 +1,11 @@
+name: 'Setup Keycloak Action'
+author: progi1984
+description: 'GitHub Action for Keycloak'
+inputs:
+  keycloak-version:
+    description: 'Setup Keycloak version'
+    default: 'latest'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
