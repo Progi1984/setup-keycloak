@@ -22,6 +22,8 @@ jobs:
           keycloak_version: latest
       - name: KeyCloak is up
         run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:8080/)" != "200" ]]; do sleep 5; done'
+      - name: KeyCloak is up
+        run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:8443/)" != "200" ]]; do sleep 5; done'
       - name: Tests (Install dependencies)
         working-directory: tests
         run: npm i
@@ -42,8 +44,11 @@ jobs:
         with:
           keycloak_version: latest
           keycloak_http_port: 1234
+          keycloak_https_port: 5678
       - name: KeyCloak is up
         run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:1234/)" != "200" ]]; do sleep 5; done'
+      - name: KeyCloak is up
+        run: bash -c 'while [[ "$(curl -L -s -o /dev/null -w %{http_code} http://localhost:5678/)" != "200" ]]; do sleep 5; done'
       - name: Tests (Install dependencies)
         working-directory: tests
         run: npm i

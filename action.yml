@@ -9,6 +9,9 @@ inputs:
   keycloak_http_port:
     description: 'Setup Keycloak HTTP Port'
     default: '8080'
+  keycloak_https_port:
+    description: 'Setup Keycloak HTTPS Port'
+    default: '8443'
   keycloak_admin_user:
     description: 'Setup Keycloak Admin User'
     default: 'admin'
