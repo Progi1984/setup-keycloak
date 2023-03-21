@@ -1,6 +1,9 @@
 name: 'Setup Keycloak Action'
 author: progi1984
 description: 'GitHub Action for Keycloak'
+branding:
+  color: 'blue'
+  icon: 'play-circle'
 inputs:
   keycloak_version:
     description: 'Setup Keycloak Version'
